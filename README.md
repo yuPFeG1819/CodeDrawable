@@ -24,6 +24,8 @@
 
 ### 依赖方式
 
+[![](https://jitpack.io/v/com.gitee.yupfeg/CodeDrawableDsl.svg)](https://jitpack.io/#com.gitee.yupfeg/CodeDrawableDsl)
+
 ``` groovy
 allprojects {
     repositories {
@@ -33,7 +35,7 @@ allprojects {
 
 //module build.gradle
 dependencies {
-    implementation 'com.gitee.yupfeg:CodeDrawable:0.1.0'
+    implementation 'com.gitee.yupfeg:CodeDrawableDsl:0.1.0'
 }
 ```
 
@@ -219,27 +221,24 @@ rotateDrawable{
 ```java
 //android.graphics.drawable.DrawableInflater.java
 public final class DrawableInflater {
-    ...
 	//负责从xml中构建drawable
     private Drawable inflateFromTag(@NonNull String name) {
+        
          switch (name) {
-            case "selector":
-                return new StateListDrawable();
-            ...
-            case "layer-list":
-                return new LayerDrawable();
-            ...     
-            case "ripple":
-                return new RippleDrawable();   
-            ...    
-            case "shape":
-                return new GradientDrawable();
-            ...     
-            case "clip":
-                return new ClipDrawable();  
-            case "rotate":
-                return new RotateDrawable();
-            ...     
+             //省略部分标签类型
+           case "selector":
+             return new StateListDrawable();
+           case "layer-list":
+             return new LayerDrawable();
+           case "ripple":
+             return new RippleDrawable();
+           case "shape":
+             return new GradientDrawable();
+           case "clip":
+             return new ClipDrawable();
+           case "rotate":
+             return new RotateDrawable();
+         }
     }
 }
 ```

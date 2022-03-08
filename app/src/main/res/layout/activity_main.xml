@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewConfig"
+            type="com.yupfeg.sampledrawable.MainActivity.BindConfig"
+            />
+    </data>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context="com.yupfeg.sampledrawable.MainActivity"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            >
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_solid_shape"
+                android:layout_width="200dp"
+                android:layout_height="35dp"
+                android:gravity="center"
+                android:text="单色 Shape Drawable"
+                android:textSize="16sp"
+                android:background="@{viewConfig.singleSolidShape}"
+                android:textColor="@{viewConfig.textColorState}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="15dp"
+                />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_solid_state_list_shape"
+                android:layout_width="300dp"
+                android:layout_height="35dp"
+                android:gravity="center"
+                android:text="color state list Shape Drawable"
+                android:textSize="16sp"
+                android:background="@{viewConfig.colorStateSolidShape}"
+                android:textColor="@{viewConfig.textColorState}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_solid_shape"
+                android:layout_marginTop="15dp"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_gradient_shape"
+                android:layout_width="200dp"
+                android:layout_height="35dp"
+                android:gravity="center"
+                android:text="渐变描边 Shape Drawable"
+                android:textSize="16sp"
+                android:background="@{viewConfig.gradientShape}"
+                android:textColor="@{viewConfig.textColorState}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_solid_state_list_shape"
+                android:layout_marginTop="15dp"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_dash_stroke_shape_drawable"
+                android:layout_width="200dp"
+                android:layout_height="35dp"
+                android:gravity="center"
+                android:text="虚线描边 Shape Drawable"
+                android:textSize="16sp"
+                android:textColor="@{viewConfig.textColorState}"
+                android:background="@{viewConfig.dashStrokeShape}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_gradient_shape"
+                android:layout_marginTop="15dp"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_oval_shape_drawable"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:gravity="center"
+                android:text="圆形"
+                android:textSize="16sp"
+                android:background="@{viewConfig.ovalShape}"
+                android:textColor="@{viewConfig.textColorState}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_dash_stroke_shape_drawable"
+                android:layout_marginTop="15dp"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_selector_shape"
+                android:layout_width="200dp"
+                android:layout_height="35dp"
+                android:gravity="center"
+                android:text="selector Shape Drawable"
+                android:textSize="16sp"
+                android:background="@{viewConfig.selectorShapeDrawable}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_oval_shape_drawable"
+                android:layout_marginTop="15dp"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_layer_list_drawable"
+                android:layout_width="200dp"
+                android:layout_height="35dp"
+                android:gravity="center"
+                android:text="layer-list Drawable"
+                android:textSize="16sp"
+                android:background="@{viewConfig.layerListDrawable}"
+                android:textColor="@{viewConfig.textColorState}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_selector_shape"
+                android:layout_marginTop="15dp"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_ripple_drawable"
+                android:layout_width="200dp"
+                android:layout_height="35dp"
+                android:gravity="center"
+                android:text="ripple Drawable"
+                android:textSize="16sp"
+                android:background="@{viewConfig.rippleDrawable}"
+                android:textColor="@{viewConfig.textColorState}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_layer_list_drawable"
+                android:layout_marginTop="15dp"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_progress_clip_layer_drawable_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="progress clip layer Drawable : "
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_ripple_drawable"
+                android:layout_marginTop="15dp"
+                />
+
+            <androidx.core.widget.ContentLoadingProgressBar
+                android:id="@+id/progress_bar_clip_layer"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                tools:progress = "45"
+                android:max="100"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:progressDrawable="@{viewConfig.progressClipLayerDrawable}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_progress_clip_layer_drawable_tip"
+                android:layout_marginTop="10dp"
+                />
+
+            <Button
+                android:id="@+id/btn_change_progress"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:text="更新随机进度值"
+                android:textColor="@{viewConfig.textColorState2}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/progress_bar_clip_layer"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_rotate_drawable_tip"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="rotate Drawable : "
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_change_progress"
+                android:layout_marginTop="15dp"
+                />
+
+            <ProgressBar
+                android:id="@+id/progress_loading"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:indeterminateDrawable="@{viewConfig.rotateDrawable}"
+                app:layout_constraintTop_toBottomOf="@id/tv_rotate_drawable_tip"
+                app:layout_constraintStart_toStartOf="@id/tv_rotate_drawable_tip"
+                app:layout_constraintEnd_toEndOf="@id/tv_rotate_drawable_tip"
+                android:layout_marginTop="15dp"
+                />
+
+            <Button
+                android:id="@+id/btn_test_recycler_view"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="测试RecyclerView内复用Drawable"
+                android:textColor="@{viewConfig.textColorState2}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/progress_loading"
+                android:layout_marginTop="15dp"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>
